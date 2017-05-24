@@ -1,0 +1,6 @@
+---
+- name: Ensure Neo4j is running
+  service:
+    name: neo4j
+    enabled: yes
+    state: started

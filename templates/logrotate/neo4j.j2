@@ -1,0 +1,10 @@
+{{ ansible_managed|comment }}
+
+/var/log/neo4j/*.log {
+  daily
+  missingok
+  rotate 14
+  compress
+  delaycompress
+  notifempty
+}

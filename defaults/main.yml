@@ -1,0 +1,20 @@
+---
+neo4j_version: latest
+neo4j_state: present
+neo4j_purge: no
+neo4j_manage_java: true
+neo4j_manage_java_certificates: true
+
+# configuration parameters that go into /etc/neo4j/neo4j.conf
+neo4j_auth_enabled: 'true'
+neo4j_bolt_listen_address: ':7687'
+neo4j_http_listen_address: ':7474'
+neo4j_https_listen_address: ':7473'
+
+# neo4j_heap_initial_size: 512m
+# neo4j_heap_max_size: 512m
+# neo4j_pagecache_size: 10g
+# neo4j_default_listen_address: 0.0.0.0
+# neo4j_shell_enabled: 'True'
+# neo4j_shell_host: 127.0.0.1
+# neo4j_shell_port: 1337

@@ -1,0 +1,26 @@
+---
+- name: Set the Neo4j configuration file
+  template:
+    src: neo4j.conf.j2
+    dest: /etc/neo4j/neo4j.conf
+    owner: neo4j
+    group: adm
+    mode: 0644
+  notify: "Restart Neo4j"
+
+- name: Set the Neo4j defaults file
+  template:
+    src: default/neo4j.j2
+    dest: /etc/default/neo4j
+    owner: root
+    group: root
+    mode: 0644
+  notify: "Restart Neo4j"
+
+- name: Set the Neo4j logrotate file
+  template:
+    src: logrotate/neo4j.j2
+    dest: /etc/logrotate.d/neo4j
+    owner: root
+    group: root
+    mode: 0644

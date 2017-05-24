@@ -1,0 +1,19 @@
+---
+- name: Install apt https transport method
+  apt:
+    name: apt-transport-https
+    state: installed
+
+- name: Configure the Jessie backports repo
+  apt_repository:
+    filename: backports
+    repo: 'deb http://http.debian.net/debian jessie-backports main'
+
+- name: Add the Neo4j apt key
+  apt_key:
+    url: https://debian.neo4j.org/neotechnology.gpg.key
+
+- name: Configure the Neo4j repo
+  apt_repository:
+    filename: neo4j
+    repo: 'deb https://debian.neo4j.org/repo stable/'
